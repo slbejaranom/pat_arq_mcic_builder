@@ -12,6 +12,7 @@ from UIDirector import *
 class SQLBuilderUI(Toplevel):
     CANDIDATE = "Candidate SQL Statement"
     EMPLOYER = "Employer SQL Statement"
+    ENTERPRISE = "Enterprise SQL Statement"
     EXIT = "Exit"
     GET_SQL = "Show SQL Statement"
     BLANK = ""
@@ -20,7 +21,7 @@ class SQLBuilderUI(Toplevel):
         Toplevel.__init__(self, master)
 
         self.__cmbSearchType = ttk.Combobox(self, state="readonly")
-        self.__cmbSearchType["values"] = [SQLBuilderUI.BLANK,SQLBuilderUI.CANDIDATE, SQLBuilderUI.EMPLOYER]
+        self.__cmbSearchType["values"] = [SQLBuilderUI.BLANK,SQLBuilderUI.CANDIDATE, SQLBuilderUI.EMPLOYER, SQLBuilderUI.ENTERPRISE]
         self.__cmbSearchType.current(0)
 
         self.__txtSQL = Text(self, height=5, width=90)

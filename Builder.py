@@ -72,3 +72,35 @@ class EmpSrchBuilder(UIBuilder):
     def getSQL(self):
         return "Select * from Employer where Username='"+self.__txtUserName.get()+"' and City='"+self.__txtCity.get()+"' and DateRenewal='"+self.__txtRenewal.get()+"'"
 #End of class
+
+class EnterpriseSrchBuilder(UIBuilder):
+    def __init__(self, frame):
+        UIBuilder.__init__(self, frame)
+        self.__txtEnterpriseName = Entry(self._searchUI)
+        self.__txtNIT = Entry(self._searchUI)
+        self.__txtCountry = Entry(self._searchUI)
+        self.__txtAddress = Entry(self._searchUI)
+
+    def addUIControls(self):
+        self.__lblEnterpriseName = Label(self._searchUI, text="Enterprise name")
+        self.__lblNIT = Label(self._searchUI, text="Tax Identification Number")
+        self.__lblCountry = Label(self._searchUI, text="Country")
+        self.__lblAddress = Label(self._searchUI, text="Address")
+
+        self.__lblEnterpriseName.grid(row=1,column=1,padx=10,pady=10)
+        self.__txtEnterpriseName.grid(row=1,column=2,padx=10,pady=10)
+        self.__lblNIT.grid(row=2,column=1,padx=10,pady=10)
+        self.__txtNIT.grid(row=2,column=2,padx=10,pady=10)
+        self.__lblCountry.grid(row=3,column=1,padx=10,pady=10)
+        self.__txtCountry.grid(row=3,column=2,padx=10,pady=10)
+        self.__lblAddress.grid(row=4,column=1,padx=10,pady=10)
+        self.__txtAddress.grid(row=4,column=2,padx=10,pady=10)
+
+    def initialize(self):
+        self.__txtEnterpriseName.insert(0,"")
+        self.__txtNIT.insert(0,"")
+        self.__txtCountry.insert(0,"")
+        self.__txtAddress.insert(0,"")
+
+    def getSQL(self):
+        return "Select * from Enterprise where EnterpriseName='"+self.__txtEnterpriseName.get()+"' and NIT='"+self.__txtNIT.get()+"' AND Country='"+self.__txtCountry.get()+"' AND Address='"+self.__txtAddress.get()+"'"

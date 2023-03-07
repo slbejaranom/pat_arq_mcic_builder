@@ -9,4 +9,6 @@ class BuilderFactory():
             return CandSrchBuilder(frame)
         elif (typeL==SQLBuilderUI.EMPLOYER):
             return EmpSrchBuilder(frame)
+        elif(typeL==SQLBuilderUI.ENTERPRISE):
+            return EnterpriseSrchBuilder(frame)
         return None
