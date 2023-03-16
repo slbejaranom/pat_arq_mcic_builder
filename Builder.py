@@ -51,7 +51,7 @@ class EmpSrchBuilder(UIBuilder):
         UIBuilder.__init__(self, frame)
         #self._searchUI=Frame(frame, bd=2, relief=RIDGE)
         self.__txtUserName = Entry(self._searchUI)
-        self.__txtCity = Entry(self._searchUI)
+        self.__txtCity = Entry( )
         self.__txtRenewal = Entry(self._searchUI)
     def addUIControls(self):
         self.__lblUserName=Label(self._searchUI,text="Name: ")
